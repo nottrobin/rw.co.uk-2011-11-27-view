@@ -9,7 +9,7 @@
 /* Include modules
  */
 var fs           = require('fs'),
-    jsonTemplate = require('./json-template.js'),
+    jsonTemplate = require('./jsontemplate.js'),
     url          = require('url');
 
 /* Setup file locations
