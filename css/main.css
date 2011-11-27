@@ -1,0 +1,161 @@
+/* Content styling *
+ *-----------------*/
+body {
+    font-family: 'Molengo', sans-serif;
+    font-size: 100%;
+    line-height: 1.5em;
+}
+h1 {margin: 0;}
+p, h2, h3, h4, li {margin-top: 1em;}
+h1,h2,h3,h4 {font-family: 'IM Fell DW Pica', serif;}
+h1 {font-size: 2em;}
+h2, aside h1 {font-size: 1.3em;}
+ul {margin-left: 2em;}
+ul.nodot li {
+    list-style-type: none;
+    margin-left: 0;
+}
+hgroup {margin: 1em 0 0 0;}
+hgroup h1, hgroup h2, hgroup h3, hgroup h4 {margin: 0;}
+a, a:visited, a:active {
+    cursor: pointer;
+    color: #999;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+}
+aside#postblock a:hover, aside#preblock a:hover {
+    color: #fff;
+    border-color: white;
+}
+small {font-size: 0.7em;}
+article {
+    margin-top: 1em;
+    border-top: 2px solid #ddd;
+}
+
+/* Layout *
+ *--------*/
+
+body {
+    text-align: center;
+    background-color: #ccc;
+}
+body * {text-align: left;}
+
+div#top {
+    background-color: black;
+    height: 6.8em;
+    margin-bottom: -6.8em;
+}
+div#container {display: inline-block;}
+
+header {
+    background-color: black;
+    margin-bottom: 1em;
+    max-width: 61em;
+    min-height: 6.8em;
+    color: white;
+}
+header h1 {
+    margin: 0;
+    padding: 1em;
+    font-size: 2.5em;
+}
+header hgroup {margin: 0;}
+header hgroup h1 {
+    padding: 0.7em 0 0 1em;
+}
+header hgroup h2 {
+    margin: 0;
+    padding: 0.5em 0 0 2em;
+}
+
+nav {margin: 0 0.5em 0.5em 0.5em;}
+nav li {
+    display: inline-block;
+    padding: 0 0.5em 0.5em 0.5em;
+    margin: 0;
+}
+nav li a, nav li a:visited {
+    display: block;
+    padding: 0.2em 0.5em;
+    background-color: #666;
+    color: white;
+}
+nav li.active a, nav li a:hover {
+    background-color: #fff;
+    border-bottom: 0px;
+    color: inherit;
+    cursor: pointer;
+}
+
+section#content {
+    padding: 0 0.5em;
+    display: inline-block;
+    clear: both;
+}
+section#topbar {
+    background-color: orange;
+    color: white;
+    padding: 0.5em;
+    margin: 0 0.5em 1em 0.5em;
+}
+
+aside#postblock {
+    float: left;
+    width: 15em;
+}
+aside#postblock section {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    margin: 0 0.5em 1em 0.5em;
+}
+section#main {
+    background-color: #fff;
+    max-width: 35em;
+    padding: 1.5em;
+    float: left;
+    margin: 0 0.5em 1em 0.5em;
+    overflow: auto;
+}
+
+footer {
+    padding: 1em;
+    background-color: grey;
+    color: white;
+}
+
+div#bottom {
+    height: 3.5em;
+    margin-top: -3.5em;
+    background-color: grey;
+}
+
+div.bracket {float: left;}
+
+@media all and (max-width: 58.5em) {
+    section#main {float: none;}
+    aside#postblock {
+        float: none;
+        width: auto;
+    }
+    aside#postblock section h1 {
+        display: inline-block;
+        border-right: 1px solid white;
+        margin: 0 20px 0 0;
+        padding-right: 20px;
+    }
+    aside#postblock section li {
+        display: inline-block;
+        margin: 0 15px 0 0;
+    }
+}
+@media all and (max-width: 36em) {
+    nav li {
+        display: block;
+        margin-bottom: 0;
+    }
+}

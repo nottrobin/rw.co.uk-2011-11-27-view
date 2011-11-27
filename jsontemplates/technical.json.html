@@ -1,0 +1,12 @@
+<h1>Technical skills</h1>
+<ul>
+  <li>Cutting edge client-side technologies: (x)HTML5, CSS3, JavaScript (AJAX and jQuery.</li>
+  <li>Expertise with server-side technologies: Perl and PHP (including MVC frameworks), Apache, Lighttpd and Nginx configuration and Subversion as well as basic knowledge of C++, and Java.</li>
+  <li>Experience with developing and extending CMSs including Drupal, Wordpress and CMSMadeSimple.</li>
+  <li>Thorough knowledge of relational database administration including MySQL and SQLite.</li>
+  <li>An in-depth understanding of search-engine optimisation and graphic design principles.</li>
+  <li>Extensive knowledge of OOP and ORM principles, usability and accessibility principles and REST URL structure principles as well as W3C standards including XHTML, CSS3 and WAI-AAA.</li>
+  <li>Experience with setting up and maintaining Unix server systems and Windows technical support.</li>
+  <li>Experience designing elegant websites and refining clients' online marketing strategies.</li>
+  <li>Experience writing technical documentation and producing technical reports.</li>
+</ul>

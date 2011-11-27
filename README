@@ -1,0 +1,12 @@
+===
+robinwinslow.co.uk
+===
+
+This repository contains all the files for my website.
+
+On my server these files are located in /var/www/robinwinslow.co.uk.
+
+The repository currently contains all the client-side resources (images, css, js) as well as several versions of template files - including raw HTML files, some PHP template files and some json-template files. Also included currently are controllers for serving the content from the json-template files with a PHP controller or a node.js controller.
+
+In the future I'm to move the controller away from this directory, so this repository will only contain client-side resources and json-template files. I will keep the controller code in a separate repository.
+

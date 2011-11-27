@@ -1,0 +1,148 @@
+/**
+ * Base elements
+ **/
+body {
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+}
+nav {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+footer { padding: 1em; }
+header {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+article, aside { padding: 1em; }
+aside { margin-left: 1em; }
+h1, h2, h3, h4, h5, h6 {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-family: 'IM Fell DW Pica';
+}
+h1 { font-size: 2.8em; }
+h2, article section h1 { font-size: 2em; }
+h3, aside h1 { font-size: 1.4444em; }
+h4 { font-size: 1.1em; }
+p  { padding-bottom: 1em;}
+blockquote {
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent #888888;
+  border-radius: 1em;
+  color: #383838;
+}
+blockquote.pull {
+  display: block;
+  float: right;
+  max-width: 15em;
+}
+code {
+  white-space: pre;
+  font-family: consolas, monospace;
+}
+code.block {
+  display: block;
+  padding: 1em;
+  background-color: #e8e8e8;
+  overflow: auto;
+}
+header h1 {
+  font-size: 2em;
+  padding-top: 0.5em;
+}
+ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+}
+li {
+    display: list-item;
+    padding-bottom: 1em;
+}
+nav { clear: both; }
+nav ul {
+    list-style: none;
+    margin: 0;
+}
+nav li {
+  float: left;
+  padding: 0.8em 1em;
+  font-size: 1.1em;
+  position: relative;
+  color: #888888;
+  font-family: 'IM Fell DW Pica';
+}
+nav li.current, nav li:hover { color: #000; }
+nav li.current:before {
+  content: '';
+  display: block;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -13px;
+  border-style: solid;
+  border-width: 13px 13px 0 13px;
+  border-color: rgba(136, 136, 136, 0.2) transparent transparent transparent;
+}
+a, a:visited { color: #369; }
+a:hover      { color: #000; }
+img {display: inline-block;}
+nav li.current a { color: black; }
+
+/**
+ * Classes
+ **/
+
+/* widths */
+.squeeze        { max-width: 60em; }
+.centralContent { max-width: 45em; }
+.sideContent    { max-width: 15em; }
+.top            { width: 100%; }
+.bottom         { width: 100%; }
+
+.top, .bottom {
+  box-shadow: inset 0 -5px 5px -5px #888888, inset 0 5px 5px -3px #888888;
+  background-color: rgba(136, 136, 136, 0.2);
+}
+
+/* Alert */
+.alert {
+  background-color: #888888;
+  color: #fff;
+  padding: 10px;
+}
+.alert p { padding-bottom: 0; }
+.browsers {
+    padding: 1em;
+}
+.browsers img {
+    margin-right: 1em;
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+/* Other stuff */
+.squeeze {
+  margin-left: auto;
+  margin-right: auto;
+}
+.squeeze:after, .centralContent:after, .sideContent:after {
+  content: '. . . . . . . . . . . . . . . . . . . . .';
+  font-size: 10em;
+  clear: both;
+}
+.push { padding-bottom: 5em; }
+.centralContent, .sideContent { float: left; }
+/* Sticky footer
+ * Unfortunately it needs to be fixed height */
+.main { min-height: 100%; }
+.bottom {
+  height: 5em;
+  margin-top: -5em;
+}
