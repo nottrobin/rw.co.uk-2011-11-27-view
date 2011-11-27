@@ -46,7 +46,7 @@ var pagesData = {
         'title':'Professional',
     },
     'technical': {
-        'file' :'index.json.html',
+        'file' :'technical.json.html',
         'title':'Technical',
     },
     '404': {
@@ -72,7 +72,7 @@ var extensionTypeMapping = {
 
 // Process the content to serve
 exports.process = function(request, response) {
-    console.log('robinwinslow.process');
+    console.log('robinwinslow.process: start');
 
     // Work out what mime type we have
     var urlParts = url.parse(request.url, true);
@@ -103,8 +103,8 @@ exports.process = function(request, response) {
         // Not raw file type, serve as HTML
         response.writeHead(200, {'Content-Type': 'text/html'});
 
-        // Default page
-        var page = 'index';
+        // Serve 404 by default
+        var page = '404';
 
         // Get the actual requested page from the URl string
         if(
@@ -113,12 +113,9 @@ exports.process = function(request, response) {
             && urlParts.query.page.length > 0
         ) {
             page = urlParts.query.page;
-        }
-
-        // If we can't find the requested page,
-        // serve 404 instead
-        if(typeof(pagesData[page]) != 'object') {
-            page = '404'
+        } else if(urlParts.pathname == '/') {
+            // If no page and we're at site root, serve index
+            page = 'index';
         }
 
         pageData = pagesData[page];
@@ -134,6 +131,8 @@ exports.process = function(request, response) {
             }
         );
     }
+
+    console.log('robinwinslow.process: end');
 }
 
 function processContent(data, request, response) {
