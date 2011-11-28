@@ -33,15 +33,6 @@ var // Modules
             'heading'   :'Page not found',
             'paragraphs': [ 'Huh?', 'We can\'t find that page' ]
         }
-    },
-    // File types
-    extensionTypeMapping = {
-    'css' : 'text/css',
-    'js'  : 'text/javascript',
-    'jpg' : 'image/jpeg',
-    'jpeg': 'image/jpeg',
-    'gif' : 'image/gif',
-    'png' : 'image/png'
     };
 // End of private variables
 
@@ -105,57 +96,33 @@ module.exports = {
         
         extensionMatch = path.match(/\.([^.]+)$/);
 
-        // Get content type
+        // Not raw file type, serve as HTML
+        response.writeHead(200, {'Content-Type': 'text/html'});
+
+        // Serve 404 by default
+        var page = '404';
+
+        // Get the actual requested page from the URl string
         if(
-            extensionMatch != null
-            && typeof(extensionMatch) == 'object'
-            && 'length' in extensionMatch
-            && extensionMatch.length > 1
-            && extensionMatch[1] in extensionTypeMapping
+            typeof(urlParts.query) == 'object'
+            && typeof(urlParts.query.page) == 'string'
         ) {
-            // Raw file type, serve it directly
-            response.writeHead(200, {'Content-Type': extensionTypeMapping[extensionMatch[1]]});
-
-            fs.readFile(
-                siteDir + '/' + path,
-                function(err, data) {
-                    // Check for error, otherwise process content
-                    if(err) { throw("err"); }
-                    else { response.write(data); }
-                }
-            );
-        } else {
-            // Not raw file type, serve as HTML
-            response.writeHead(200, {'Content-Type': 'text/html'});
-
-            // Serve 404 by default
-            var page = '404';
-
-            // Get the actual requested page from the URl string
-            if(
-                typeof(urlParts.query) == 'object'
-                && typeof(urlParts.query.page) == 'string'
-                && urlParts.query.page.length > 0
-            ) {
-                page = urlParts.query.page;
-            } else if(urlParts.pathname == '/') {
-                // If no page and we're at site root, serve index
-                page = 'index';
-            }
-
-            pageData = pagesData[page];
-            
-            // Read the content template file
-            fs.readFile(
-                siteDir + '/' + templateDir + '/' + pageData.file,
-                'ascii',
-                function(err, data) {
-                    // Check for error, otherwise process content
-                    if(err) {console.warn('yomum', err); }
-                    else { processContent(data, request, response); }
-                }
-            );
+            // If page param is empty, set it to "index". Otherwise, pass it through
+            page =  urlParts.query.page == '' ? 'index' : urlParts.query.page;
         }
+
+        pageData = pagesData[page];
+        
+        // Read the content template file
+        fs.readFile(
+            siteDir + '/' + templateDir + '/' + pageData.file,
+            'ascii',
+            function(err, data) {
+                // Check for error, otherwise process content
+                if(err) {console.warn('yomum', err); }
+                else { processContent(data, request, response); }
+            }
+        );
     }
 };
 

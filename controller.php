@@ -1,4 +1,3 @@
-
 <?php
 
 // Include json template
