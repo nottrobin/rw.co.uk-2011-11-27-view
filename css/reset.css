@@ -9,6 +9,7 @@ html {
   text-decoration: none;
   font-family: helvetica, sans-serif;
   color: black;
+  line-height: 1.25em;
   background-color: #fff;
 }
 body, header, footer, aside, section, article, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, a:hover, a:visited, em {
@@ -39,3 +40,4 @@ ul:after, ol:after, li:after, img:after, div:after {
   overflow: hidden;
 }
 ul, ol { list-style: none; }
+
