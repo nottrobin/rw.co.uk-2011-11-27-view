@@ -14,7 +14,11 @@ default-formatter: html
         <script>
             /* Config options */
             var WebFontConfig = { google: { families: ['Open Sans', 'IM Fell DW Pica'] } }; // Webfonts
-            var _gaq = [ ['_setAccount', 'UA-2993676-1'], ['_trackPageview'] ]; // Google Analytics
+            var _gaq = [
+                ['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js'],
+                ['_setAccount', 'UA-2993676-6'],
+                ['_trackPageview']
+            ]; // Google Analytics
         </script>
         <!-- load jQuery and Webfonts from Google -->
         <script src="//www.google.com/jsapi?autoload=%7b%22modules%22%3a%5b%7b%22name%22%3a%22jquery%22%2c%22version%22%3a%221.6.2%22%7d%2c%7b%22name%22%3a%22webfont%22%2c%22version%22%3a%221.0.22%22%7d%5d%7d&key=ABQIAAAAYNwz9AGnDUkvoVXdGY1E_BQo9Cph14ZnKdwZJhw6y-dSmkhWihQXC8_m3NiG5b3rggE8bkE9Kz8IIg"></script>
