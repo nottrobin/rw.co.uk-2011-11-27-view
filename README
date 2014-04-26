@@ -11,5 +11,5 @@ The repository currently contains all the client-side resources (images, css, js
 No client-side code is contained in this folder. The idea is that the templates will be parsed with a controller (in any language that can parse json-template files) located elsewhere.
 
 Examples of such controllers (ones for node.js and PHP written so far) are contained in my "web-controllers" repository:
-https://nottrobin@github.com/nottrobin/web-controllers.git
+https://nottrobin@github.com/nottrobin/rw.co.uk-2011-11-27-controllers.git
 
